@@ -23,6 +23,7 @@ function WordBubble ({ scheme, children, onClick }) {
         height: scheme.height,
         width: scheme.width,
         margin: scheme.margin,
+        padding: scheme.padding,
         backgroundColor: scheme.main,
         flexDirection: scheme.dir,
         justifyContent: scheme.justify,

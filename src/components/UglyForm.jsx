@@ -2,13 +2,13 @@
 
 import InvisContainer from "./InvisContainer"
 import StyledInput from "./StyledInput"
+import WordBubble from "./WordBubble"
 
 const formScheme = {
     height: "fit-content",
     width: "fit-content",
-    main: "",
-    border: "3px solid lightsalmon",
-    radius: "20px"
+    main: "indianred",
+    shadow: "darkolivegreen"
 }
 
 const questionScheme = {
@@ -40,12 +40,13 @@ const colScheme = {
 function UglyForm () {
 
     return (
-        <InvisContainer scheme={ formScheme }>
-            <form>
+        <WordBubble scheme={ formScheme }>
+            {/* <form> */}
                 <InvisContainer scheme={ questionScheme }>
-                    <StyledInput type="text" placeholder="question" />
+                    <StyledInput type="text" placeholder="What's your question?" />
                 </InvisContainer>
                 <InvisContainer scheme={ optionsScheme }>
+                        <label>Provide some answer options:</label>
                     <InvisContainer scheme={ colScheme }>
                         <StyledInput type="text" placeholder="option 1" />
                         <StyledInput type="text" placeholder="option 3" />
@@ -56,10 +57,10 @@ function UglyForm () {
                     </InvisContainer>
                 </InvisContainer>
                 <InvisContainer scheme={ lastScheme }>
-                    <StyledInput type="text" placeholder="correct" />
+                    <StyledInput type="text" placeholder="correct answer" />
                 </InvisContainer>
-            </form>
-        </InvisContainer>
+            {/* </form> */}
+        </WordBubble>
     )
 }
 

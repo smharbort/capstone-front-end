@@ -2,17 +2,18 @@ import { useState } from "react"
 
 import Page from "../components/Page"
 import WordBubble from "../components/WordBubble"
-import AddQ from "../components/AddQButton"
+import Click from "../components/Click"
 import UglyForm from "../components/UglyForm"
 import InvisContainer from "../components/InvisContainer"
+import Text from "../components/Text"
 
 const pageScheme = {
-    main: "skyblue",
-    splash: "darkslateblue",
-    x: ".6em",
-    y: ".4em",
-    wide: "7em",
-    tall: "6em",
+    main: "darkseagreen",
+    splash: "darkcyan",
+    x: ".2em",
+    y: ".6em",
+    wide: "8em",
+    tall: "5em",
     dir: "column",
     justify: "center",
     align: "center"
@@ -20,13 +21,15 @@ const pageScheme = {
 const explainScheme = {
     height: "20%",
     width: "40%",
-    main: "lightsalmon",
+    main: "indianred",
+    shadow: "darkolivegreen"
 }
 
 const addQScheme = {
     height: "10%",
     width: "fit-content",
-    main: "lightsalmon",
+    main: "indianred",
+    shadow: "darkolivegreen"
 }
 
 const qContainer = {
@@ -44,20 +47,23 @@ function CreateQuiz () {
 
     const questions = []
     for (let i = 0; i < qCount; i++) {
-        questions.push( <UglyForm key={ i }>Nice</UglyForm> )
+        questions.push( <UglyForm id={ `question${ i }` } key={ i }></UglyForm> )
     }
+    console.log(questions)
 
     return (
         <Page scheme={ pageScheme }>
             <WordBubble scheme={ explainScheme }>
-                <h1>Create a Quiz!</h1>
+                <Text scheme={{color: "gold", size: "3em"}} text="Create Your Quiz!" />
             </WordBubble>
             <InvisContainer scheme={ qContainer }>
-                { questions }
+                <form id="quiz-form">
+                    { questions }
+                </form>
             </InvisContainer>
-            <AddQ scheme={ addQScheme } onClick={ handleClick }>
-                <h1>Add a question</h1>
-            </AddQ>
+            <Click scheme={ addQScheme } onClick={ handleClick }>
+                <Text scheme={{color: "gold", size: "2em"}} text="Add question" />
+            </Click>
         </Page>
     )
 }

@@ -16,10 +16,11 @@ const pageScheme = {
     dir: "column"
 }
 const heroScheme = {
-    height: "50%",
+    height: "60%",
     width: "50%",
     main: "orangered",
     margin: "auto auto 20px auto",
+    padding: "10px 50px"
 }
 
 const userPortalsScheme = {
@@ -27,6 +28,7 @@ const userPortalsScheme = {
     width: "175px",
     main: "bisque",
     margin: "0 10px",
+    padding: "5px"
 }
 
 const playNowScheme = {
@@ -49,8 +51,8 @@ function HomePage () {
     return (
         <Page scheme={ pageScheme }>
             <WordBubble id="hero" scheme={ heroScheme }>
-                <Text scheme={{ color: "bisque", size: "4em" }} text="Welcome!"></Text>
-                <Text scheme={{ color: "darkslateblue", size: "2em" }} text="The one-stop tool for anything and everything you need to study!"></Text>
+                <Text scheme={{ color: "bisque", size: "2.5em" }} text="Welcome!"></Text>
+                <Text scheme={{ color: "darkslateblue", size: "1.25em" }} text="The one-stop tool for anything and everything you need to study!"></Text>
             </WordBubble>
             <InvisContainer scheme={ invisScheme }>
                 <WordBubble scheme={ userPortalsScheme }>
