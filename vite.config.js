@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    // open: "https://ps-capstone-quiz-app-frontend-v1.netlify.app/",
     port: 3013
   }
 })
