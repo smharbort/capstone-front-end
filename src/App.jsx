@@ -6,6 +6,8 @@ import GlobalStyles from "./styles/GlobalStyles"
 // import pages here
 import HomePage from "./pages/HomePage"
 import CreateQuiz from "./pages/CreateQuiz"
+import Testing from "./pages/Testing"
+import Create from "./pages/Create"
 
 function App() {
 
@@ -14,7 +16,10 @@ function App() {
       <GlobalStyles />
       <Routes>
         <Route path="/" element={ <HomePage /> } />
-        <Route path="/create" element={ <CreateQuiz /> } />
+        <Route path="/create-quiz" element={ <CreateQuiz /> } />
+        {/* Test pages and/or components below */}
+        <Route path="/test" element={ <Testing /> } />
+        <Route path="/create" element={ <Create /> } />
       </Routes>
     </Router>
   )

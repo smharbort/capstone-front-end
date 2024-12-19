@@ -28,7 +28,7 @@ function WordBubble ({ scheme, children, onClick }) {
         flexDirection: scheme.dir,
         justifyContent: scheme.justify,
         alignItems: scheme.align,
-        boxShadow: `${ scheme.shadow } -1em 1em 1.2em`
+        boxShadow: `${ scheme.shadow } -1em 1em 1.2em`,
     }
 
     return (

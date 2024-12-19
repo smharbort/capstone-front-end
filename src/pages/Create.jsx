@@ -3,9 +3,11 @@ import { useState } from "react"
 import Page from "../components/Page"
 import WordBubble from "../components/WordBubble"
 import Click from "../components/Click"
-import Question from "../components/Question"
 import InvisContainer from "../components/InvisContainer"
 import Text from "../components/Text"
+import DiffQ from "../components/DiffQ"
+import StyledInput from "../components/StyledInput"
+import Question from "../components/Question"
 
 const pageScheme = {
     main: "darkseagreen",
@@ -18,6 +20,7 @@ const pageScheme = {
     justify: "center",
     align: "center"
 }
+
 const explainScheme = {
     height: "20%",
     width: "40%",
@@ -34,22 +37,42 @@ const addQScheme = {
 
 const qContainer = {
     height: "60%",
-    width: "60%"
+    width: "60%",
+    // justify: "center",
+    // align: "center"
 }
 
-function CreateQuiz () {
+const categoryScheme = {
+    height: "fit-content",
+    width: "fit-content",
+    main: "indianred",
+    shadow: "darkolivegreen",
+    padding: "25px"
+}
 
-    const [ qCount, setQCount ] = useState(1)
+function Category () {
+
+    return (
+        <WordBubble scheme={ categoryScheme }>
+            <StyledInput name="category" type="text" placeholder="Give your quiz a label" />
+        </WordBubble>
+    )
+}
+
+function Create () {
+
+    const [ questions, setQuestions ] = useState(
+        [ <Category key={ 0 } />, <Question key={ 1 } /> ]
+    )
 
     function handleClick () {
-        setQCount(qCount + 1)
+        console.log(questions.length)
+        setQuestions((previousQ) => [...questions,
+            <Question key={ previousQ.length }/>
+        ])
+        console.log(questions.length)
+        console.log("clicked")
     }
-
-    const questions = []
-    for (let i = 0; i < qCount; i++) {
-        questions.push( <Question id={ `question${ i }` } key={ i }></Question> )
-    }
-    console.log(questions)
 
     return (
         <Page scheme={ pageScheme }>
@@ -57,9 +80,7 @@ function CreateQuiz () {
                 <Text scheme={{color: "bisque", size: "3em"}} text="Create Your Quiz!" />
             </WordBubble>
             <InvisContainer scheme={ qContainer }>
-                <form id="quiz-form">
-                    { questions }
-                </form>
+                { questions.map((q) => (q)) }
             </InvisContainer>
             <Click scheme={ addQScheme } onClick={ handleClick }>
                 <Text scheme={{color: "bisque", size: "2em"}} text="Add question" />
@@ -68,4 +89,4 @@ function CreateQuiz () {
     )
 }
 
-export default CreateQuiz
+export default Create

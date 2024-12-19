@@ -1,5 +1,3 @@
-// import styled from "styled-components"
-
 import InvisContainer from "./InvisContainer"
 import StyledInput from "./StyledInput"
 import WordBubble from "./WordBubble"
@@ -37,31 +35,30 @@ const colScheme = {
     width: "fit-content",
 }
 
-function UglyForm () {
+function Question () {
 
     return (
         <WordBubble scheme={ formScheme }>
-            {/* <form> */}
                 <InvisContainer scheme={ questionScheme }>
-                    <StyledInput type="text" placeholder="What's your question?" />
+                    <StyledInput name="question" type="text" placeholder="What's your question?" />
                 </InvisContainer>
                 <InvisContainer scheme={ optionsScheme }>
-                        <label>Provide some answer options:</label>
+                        {/* <label>Provide some answer options:</label> */}
                     <InvisContainer scheme={ colScheme }>
                         <StyledInput type="text" placeholder="option 1" />
                         <StyledInput type="text" placeholder="option 3" />
                     </InvisContainer>
                     <InvisContainer scheme={ colScheme }>
-                    <StyledInput type="text" placeholder="option 2" />
-                    <StyledInput type="text" placeholder="option 4" />
+                        <StyledInput type="text" placeholder="option 2" />
+                        <StyledInput type="text" placeholder="option 4" />
                     </InvisContainer>
                 </InvisContainer>
                 <InvisContainer scheme={ lastScheme }>
+                    {/* delete button would go here */}
                     <StyledInput type="text" placeholder="correct answer" />
                 </InvisContainer>
-            {/* </form> */}
         </WordBubble>
     )
 }
 
-export default UglyForm
+export default Question
